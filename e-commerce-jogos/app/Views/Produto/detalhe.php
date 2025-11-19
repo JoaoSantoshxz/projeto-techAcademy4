@@ -1,7 +1,5 @@
 <?php 
-// /app/Views/produto/detalhe.php
 
-// A variável $produto deve ser fornecida pelo ProdutoController::detalhe()
 
 require_once '../app/Views/layouts/header.php'; 
 
