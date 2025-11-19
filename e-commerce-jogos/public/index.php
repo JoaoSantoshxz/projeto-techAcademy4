@@ -4,11 +4,20 @@ require_once '../app/Models/Conexao.php';
 require_once '../app/Controllers/ClienteController.php';
 require_once '../app/Controllers/ProdutoController.php';
 
+$basePath = 'e-commerce-jogos/public';
 
 $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-echo "DEBUG URI LIDA: " . $uri . "<br>"; 
-die();
+if (strpos($uri, $basePath) === 0) {
+    $uri = str_replace($basePath, '', $uri);
+}
+
+$uri = trim($uri, '/');
+
+//echo "DEBUG URI LIDA: " . $uri . "<br>"; 
+//die();
 $url_parts = explode('/', trim($uri,'/'));
+
+
 
 $controller_name = !empty($url_parts[0]) ? ucfirst($url_parts[0]) . 'controller' : 'ProdutoController';
 $action_name = !empty($uri_parts[1]) ? $uri_parts[1] : 'index';
