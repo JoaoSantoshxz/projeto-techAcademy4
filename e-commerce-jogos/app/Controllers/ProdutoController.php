@@ -5,7 +5,7 @@ require_once '../app/Models/Produto.php';
 class ProdutoController {
     public function index() {
         $produtoModel = new Produto();
-        $produtos = $produtoModel->buscarTodos();
+        $produtos = $produtoModel->listarTodos();
 
         require_once '../app/Views/produto/listar.php';
     }
