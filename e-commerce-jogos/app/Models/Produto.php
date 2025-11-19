@@ -10,7 +10,7 @@ class Produto {
         public function criar($nome, $valor, $estoque) {
     $sql = "INSERT INTO produtos ($nome, $valor, $estoque) VALUES (?, ?, ?)";
     $stmt = $this->pdo->prepare($sql);
-    return $stmt->execute([$nome, $valor, $estoque])
+    return $stmt->execute([$nome, $valor, $estoque]);
     }
 
     public function buscarTodos() {
@@ -29,4 +29,5 @@ class Produto {
     $stmt = $this->pdo->prepare($sql);
     return $stmt->execute([$id]);
     }
+
 }
